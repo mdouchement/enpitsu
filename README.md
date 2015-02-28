@@ -4,25 +4,16 @@ TODO: Write a gem description
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-$ gem 'mgn_meta'
-```
-
-And then execute:
+Execute:
 ```bash
-$ bundle
+$ ./bin/enpitsu
 ```
 
 Or install it yourself as:
 ```bash
 $ gem install enpitsu
+$ enpitsu
 ```
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Contributing
 
