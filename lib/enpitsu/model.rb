@@ -5,7 +5,7 @@ module Enpitsu
     attr_accessor :path
 
     def load_path
-      @matadata = Metadata.new(path)
+      @metadata = Metadata.new(path)
     end
   end
 end

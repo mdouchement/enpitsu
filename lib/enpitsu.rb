@@ -1,3 +1,4 @@
+require 'active_support/all'
 require 'green_shoes'
 require 'forwardable'
 require 'enpitsu/version'

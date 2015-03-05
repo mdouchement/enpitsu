@@ -15,7 +15,7 @@ module Enpitsu
 
     def browse
       ask_open_folder.tap do |path|
-        path_field.text = path
+        path_field.text = path #TODO must be done by observer notification
         @controller.load_path(path)
       end
     end
