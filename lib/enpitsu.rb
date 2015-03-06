@@ -1,6 +1,7 @@
 require 'active_support/all'
 require 'green_shoes'
 require 'forwardable'
+require 'observer'
 require 'enpitsu/version'
 require 'enpitsu/controller'
 require 'enpitsu/model'

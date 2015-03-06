@@ -8,5 +8,13 @@ module Enpitsu
       @path = path
       @buffer = init_metadata
     end
+
+    def gallery_headers
+      { title: @buffer[:title], description: @buffer[:description] }
+    end
+
+    def image(index)
+      @buffer[:images][index]
+    end
   end
 end
