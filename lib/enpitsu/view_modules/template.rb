@@ -48,7 +48,7 @@ module Enpitsu
 
             flow width: 0.7, height: 1.0, margin: 8 do
               main.image_filename_field = inscription 'Cool Story Bro'
-              main.canvas_field = image 'http://www.troll.me/images/coolstorybrotell/cool-story-bro.jpg'
+              main.canvas_field = image File.join(Enpitsu.pwd, '..', 'data', 'csb.jpg')
             end
           end
         end

@@ -1,8 +1,5 @@
 module Enpitsu
   class Controller
-    # extend Forwardable
-    # delegate [:path] => :@model
-
     def initialize(slot)
       @view = View.new(slot, self)
       @model = Model.new
