@@ -30,7 +30,7 @@ module Enpitsu
         image_description_field.text = image[:description]
         image_filename_field.text = image[:filename]
         canvas_field.path = File.join(model.path, image[:filename])
-        canvas_field.style width: 1.5, height: 1.5
+        # resize_canvas
       end
     end
 

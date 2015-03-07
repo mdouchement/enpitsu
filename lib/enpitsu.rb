@@ -1,5 +1,5 @@
 require 'active_support/all'
-require 'green_shoes'
+require 'enpitsu/core_ext/green_shoes' if require 'green_shoes'
 require 'forwardable'
 require 'observer'
 require 'enpitsu/version'
