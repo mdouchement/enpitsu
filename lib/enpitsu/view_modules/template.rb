@@ -22,33 +22,33 @@ module Enpitsu
               flow do
                 inscription '' # Ugly top margin
                 inscription "Gallery's title:", margin: 2
-                @gallery_title_field = edit_box width: 1.0
+                main.gallery_title_field = edit_line width: 1.0
                 inscription "Gallery's description:", margin: 2
-                @gallery_description_field = edit_line width: 1.0
-                @validate_btn = button 'Validate', right: true
+                main.gallery_description_field = edit_box width: 1.0
+                main.validate_btn = button 'Validate', right: true
               end
 
               flow do
                 tagline '' # Ugly top margin
                 inscription "Image's title:", margin: 2
-                @image_title_field = edit_line width: 1.0
+                main.image_title_field = edit_line width: 1.0
                 inscription "Image's comment:", margin: 2
-                @image_description_field = edit_box width: 1.0
-                @copy_btn = button 'Copy'
-                @paste_btn = button 'Paste'
-                @previrous_btn = button 'Previous'
-                @next_btn = button 'Next'
+                main.image_description_field = edit_box width: 1.0
+                main.copy_btn = button 'Copy'
+                main.paste_btn = button 'Paste'
+                main.previrous_btn = button 'Previous'
+                main.next_btn = button 'Next'
               end
 
               flow do
                 tagline '' # Ugly top margin
-                @generate_btn = button 'Generate'
+                main.generate_btn = button 'Generate'
               end
             end
 
             flow width: 0.7, height: 1.0, margin: 8 do
-              @image_filename_field = inscription 'img_56.jpg'
-              @canvas_field = image 'http://www.troll.me/images/coolstorybrotell/cool-story-bro.jpg'
+              main.image_filename_field = inscription 'Cool Story Bro'
+              main.canvas_field = image File.join(Enpitsu.pwd, '..', 'data', 'csb.jpg')
             end
           end
         end

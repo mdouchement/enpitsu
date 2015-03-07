@@ -52,8 +52,7 @@ module Enpitsu
       end
 
       def file?
-        valid = File.exist?(File.join @path, 'metadata.txt')
-        valid || File.exist?(File.join @path, 'metadata.json')
+        File.exist?(File.join @path, 'metadata.json')
       end
     end
   end
