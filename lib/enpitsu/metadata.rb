@@ -16,5 +16,17 @@ module Enpitsu
     def image(index)
       @buffer[:images][index]
     end
+
+    def update_attributes(value, index = nil)
+      if index
+        @buffer[:images][index].merge!(value)
+      else
+        @buffer.merge!(value)
+      end
+    end
+
+    def nb_of_images
+      @nb_of_images ||= @buffer[:images].length
+    end
   end
 end

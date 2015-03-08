@@ -19,6 +19,34 @@ module Enpitsu
       @metadata.image(@index)
     end
 
+    def previous_image
+      @index -= 1
+      notify
+    end
+
+    def next_image
+      @index += 1
+      notify
+    end
+
+    def index_valid?(action)
+      case action
+      when :previous
+        index = @index - 1
+      when :next
+        index = @index + 1
+      end
+      index > -1 && index < @metadata.nb_of_images
+    end
+
+    def update_gallery_headers(value)
+      @metadata.update_attributes(value)
+    end
+
+    def update_image(value)
+      @metadata.update_attributes(value, @index)
+    end
+
     private
 
     def notify
