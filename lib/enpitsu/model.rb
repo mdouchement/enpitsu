@@ -47,6 +47,17 @@ module Enpitsu
       @metadata.update_attributes(value, @index)
     end
 
+    def copy
+      @clipboard = current_image.deep_dup.tap do |h|
+        h.delete(:filename)
+      end
+    end
+
+    def paste
+      update_image(@clipboard)
+      notify
+    end
+
     private
 
     def notify

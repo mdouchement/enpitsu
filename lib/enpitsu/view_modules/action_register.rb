@@ -9,6 +9,8 @@ module Enpitsu
         image_description_field.change { |f| update_meta(:image, description: f.text) }
         previous_btn.click { previous_image }
         next_btn.click { next_image }
+        copy_btn.click { copy }
+        paste_btn.click { paste }
       end
     end
   end

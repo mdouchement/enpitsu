@@ -2,7 +2,7 @@ module Enpitsu
   class Controller
     extend Forwardable
 
-    delegate [:load_path] => :@model
+    delegate [:load_path, :copy, :paste] => :@model
 
     def initialize(slot)
       @view = View.new(slot, self)
@@ -15,8 +15,6 @@ module Enpitsu
       @model.previous_image
     end
 
-    # clear when new browse
-    # copy/paste
     # generate
     # backup
 

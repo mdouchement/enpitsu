@@ -7,7 +7,7 @@ module Enpitsu
     include ViewModules::ActionRegister
     extend Forwardable
 
-    delegate [:previous_image, :next_image, :update_meta] => :@controller
+    delegate [:previous_image, :next_image, :update_meta, :copy, :paste] => :@controller
 
     def initialize(slot, controller)
       @slot = slot
