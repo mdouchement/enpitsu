@@ -6,7 +6,7 @@ module Enpitsu
     extend Forwardable
     attr_accessor :path
 
-    delegate [:gallery_headers] => :@metadata
+    delegate [:gallery_headers, :generate] => :@metadata
 
     def load_path(path)
       @path = path
@@ -54,7 +54,7 @@ module Enpitsu
     end
 
     def paste
-      update_image(@clipboard)
+      update_image(@clipboard || {})
       notify
     end
 

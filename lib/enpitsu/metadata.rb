@@ -1,3 +1,4 @@
+require 'json'
 require 'enpitsu/metadata_modules/loader'
 
 module Enpitsu
@@ -27,6 +28,12 @@ module Enpitsu
 
     def nb_of_images
       @nb_of_images ||= @buffer[:images].length
+    end
+
+    def generate
+      File.open(File.join(@path, 'metadata.json'), 'w') do |file|
+        file << JSON.pretty_generate(@buffer)
+      end
     end
   end
 end
