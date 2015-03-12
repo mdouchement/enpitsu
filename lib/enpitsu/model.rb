@@ -1,7 +1,9 @@
+require 'celluloid'
 require 'enpitsu/metadata'
 
 module Enpitsu
   class Model
+    # include Celluloid
     include Observable
     extend Forwardable
     attr_accessor :path

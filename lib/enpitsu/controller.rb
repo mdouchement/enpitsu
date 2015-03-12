@@ -15,8 +15,6 @@ module Enpitsu
       @model.previous_image
     end
 
-    # backup
-
     def next_image
       return unless @model.index_valid?(:next)
       @model.next_image
