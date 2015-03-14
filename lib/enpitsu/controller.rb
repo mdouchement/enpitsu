@@ -1,8 +1,7 @@
 module Enpitsu
   class Controller
     extend Forwardable
-
-    delegate %i(load_path copy paste generate) => :@model
+    delegate load_path: :@model
 
     def initialize(slot)
       @view = View.new(slot, self)
@@ -11,13 +10,20 @@ module Enpitsu
     end
 
     def previous_image
-      return unless @model.index_valid?(:previous)
+      return unless @model.metadata? && @model.index_valid?(:previous)
       @model.previous_image
     end
 
     def next_image
-      return unless @model.index_valid?(:next)
+      return unless @model.metadata? && @model.index_valid?(:next)
       @model.next_image
+    end
+
+    %i(copy paste generate).each do |method_name|
+      define_method(method_name) do
+        return unless @model.metadata?
+        @model.send(method_name)
+      end
     end
 
     def update_meta(type, data)
