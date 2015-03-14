@@ -3,7 +3,6 @@ require 'enpitsu/metadata'
 
 module Enpitsu
   class Model
-    # include Celluloid
     include Observable
     extend Forwardable
     attr_accessor :path
@@ -15,6 +14,10 @@ module Enpitsu
       @index = 0
       @metadata = Metadata.new(path)
       notify
+    end
+
+    def metadata?
+      @metadata.present?
     end
 
     def current_image

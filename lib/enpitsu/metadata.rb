@@ -5,6 +5,8 @@ module Enpitsu
   class Metadata
     include Celluloid
     include MetadataModules::Loader
+    extend Forwardable
+    delegate logger: Enpitsu
 
     def initialize(path)
       @path = path
@@ -33,8 +35,8 @@ module Enpitsu
     end
 
     def generate(filename = 'metadata.json')
+      logger.info "Generate #{File.join(@path, filename)}"
       File.open(File.join(@path, filename), 'w') do |file|
-        STDOUT.puts "Generate #{file.path}"
         file << JSON.pretty_generate(@buffer)
       end
     end
@@ -42,7 +44,6 @@ module Enpitsu
     private
 
     def backup
-      puts 'Start backup timer'
       every(5.minutes) do
         generate("metadata_backup_#{Time.now.utc.strftime('%Y%m%d%H%M%S')}.json")
       end

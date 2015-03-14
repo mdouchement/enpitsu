@@ -46,8 +46,8 @@ module Enpitsu
             end
 
             flow width: 0.7, height: 1.0, margin: 8 do
-              main.image_filename_field = inscription 'Cool Story Bro'
-              main.canvas_field = image File.join(Enpitsu.pwd, '..', 'data', 'csb.jpg')
+              main.image_filename_field = inscription 'oawsooo.png'
+              main.canvas_field = image File.join(Enpitsu.pwd, '..', 'data', 'oawsooo.png')
             end
           end
         end
