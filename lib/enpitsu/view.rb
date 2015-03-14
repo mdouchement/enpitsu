@@ -5,6 +5,9 @@ module Enpitsu
   class View
     include ViewModules::Template
     include ViewModules::ActionRegister
+    extend Forwardable
+
+    delegate %i(previous_image next_image update_meta copy paste generate) => :@controller
 
     def initialize(slot, controller)
       @slot = slot

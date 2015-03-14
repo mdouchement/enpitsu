@@ -2,9 +2,9 @@ module Enpitsu
   module ViewModules
     module Template
       attr_accessor :path_field, :browse_btn,
-                    :gallery_title_field, :gallery_description_field, :validate_btn,
+                    :gallery_title_field, :gallery_description_field,
                     :image_title_field, :image_description_field, :copy_btn, :paste_btn,
-                    :previrous_btn, :next_btn, :generate_btn,
+                    :previous_btn, :next_btn, :generate_btn,
                     :image_filename_field, :canvas_field
 
       # rubocop:disable Metrics/AbcSize
@@ -25,7 +25,6 @@ module Enpitsu
                 main.gallery_title_field = edit_line width: 1.0
                 inscription "Gallery's description:", margin: 2
                 main.gallery_description_field = edit_box width: 1.0
-                main.validate_btn = button 'Validate', right: true
               end
 
               flow do
@@ -36,7 +35,7 @@ module Enpitsu
                 main.image_description_field = edit_box width: 1.0
                 main.copy_btn = button 'Copy'
                 main.paste_btn = button 'Paste'
-                main.previrous_btn = button 'Previous'
+                main.previous_btn = button 'Previous'
                 main.next_btn = button 'Next'
               end
 

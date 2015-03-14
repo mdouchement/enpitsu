@@ -1,5 +1,3 @@
-require 'json'
-
 module Enpitsu
   module MetadataModules
     module Loader
