@@ -11,6 +11,7 @@ end
 
 begin
   require_relative '../lib/enpitsu'
+  Enpitsu.start
 rescue => e
   raise e if $DEBUG
   STDERR.puts e.message
