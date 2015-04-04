@@ -20,8 +20,11 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.2'
 
-  # spec.add_dependency 'green_shoes', '1.1.374'
-  spec.add_dependency 'shoes', '4.0.0.pre3'
+  if RUBY_ENGINE == 'ruby'
+    spec.add_dependency 'green_shoes', '1.1.374'
+  elsif RUBY_ENGINE == 'jruby'
+    spec.add_dependency 'shoes', '4.0.0.pre3'
+  end
   spec.add_dependency 'activesupport', '4.2.0'
   spec.add_dependency 'celluloid', '~> 0.16.0'
 

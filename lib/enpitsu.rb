@@ -1,6 +1,9 @@
 require 'active_support/all'
-# require 'enpitsu/core_ext/green_shoes' if require 'green_shoes'
-require 'shoes'
+if RUBY_ENGINE == 'ruby'
+  require 'enpitsu/core_ext/green_shoes' if require 'green_shoes'
+elsif RUBY_ENGINE == 'jruby'
+  require 'shoes'
+end
 require 'forwardable'
 require 'observer'
 require 'enpitsu/version'
