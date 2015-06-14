@@ -23,13 +23,13 @@ Gem::Specification.new do |spec|
   if RUBY_ENGINE == 'ruby'
     spec.add_dependency 'green_shoes', '1.1.374'
   elsif RUBY_ENGINE == 'jruby'
-    spec.add_dependency 'shoes', '4.0.0.pre3'
+    spec.add_dependency 'shoes', '4.0.0.pre4'
   end
   spec.add_dependency 'activesupport', '4.2.0'
   spec.add_dependency 'celluloid', '~> 0.16.0'
 
   spec.add_development_dependency 'bundler', '~> 1.8'
-  spec.add_development_dependency 'rake', '10.0'
+  spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rubocop', '0.29.1'
   spec.add_development_dependency 'rspec', '3.2.0'
 end
